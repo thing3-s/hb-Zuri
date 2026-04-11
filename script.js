@@ -1,5 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- 0. 🌟 新增：信封开场动画逻辑 🌟 ---
+    const envelopeContainer = document.getElementById('envelope-container');
+    const envelopeWrapper = document.getElementById('envelope-wrapper');
+    const openEnvelopeBtn = document.getElementById('open-envelope-btn');
+
+    if (openEnvelopeBtn && envelopeWrapper && envelopeContainer) {
+        openEnvelopeBtn.addEventListener('click', () => {
+            // 1. 触发信封打开和信纸冒出的动画
+            envelopeWrapper.classList.add('open');
+            
+            // 2. 延迟后触发整体向上的拓展滑动动画
+            envelopeContainer.classList.add('slide-up');
+
+            // 3. 动画完成后将信封彻底从DOM中隐藏，防止阻挡后面的网页点击
+            setTimeout(() => {
+                envelopeContainer.style.display = 'none';
+            }, 2200); // 等待上滑动画执行完毕 (1s 延迟 + 1.2s 动画时间)
+        });
+    }
+
     // 1. 音乐与动画控制
     const surpriseBtn = document.getElementById('surpriseBtn');
     const bgMusic = document.getElementById('bgMusic');

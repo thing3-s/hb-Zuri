@@ -1,3 +1,21 @@
+/* --- 🌟 新增字体与排版优化 🌟 --- */
+body {
+    /* 使用优雅的思源宋体作为基础字体 */
+    font-family: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, "Segoe UI", serif;
+    background-color: #000000; /* 纯黑底色 */
+    color: #ffffff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .top-bar {
     text-align: center;
     padding: 20px;
@@ -7,21 +25,6 @@
     position: relative;
     z-index: 10;
 }
-
-/* 全局暗黑背景 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #000000; /* 纯黑底色 */
-    color: #ffffff;
-    overflow-x: hidden;
-}
-
 
 /* --- 模块 1：首屏样式 (核心修改部分 - 增加多图幻灯片) --- */
 .hero-section {
@@ -43,7 +46,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* 这里增加了一个半透明的黑色蒙版 (0.3是透明度)，防止照片太亮导致文字看不清 */
     background-color: rgba(0, 0, 0, 0.3); 
     z-index: 1; /* 蒙版在图片上面 */
 }
@@ -59,145 +61,50 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* 绑定动画：动画名 总时长(15秒) 无限循环 */
     animation: backgroundSlideshow 60s infinite; 
-    /* 初始显示第一张图 */
     background-image: url('bg1.jpg'); 
 }
 
-/* 定义背景图片切换动画 */
-/* 计算方法：总时长15秒，3张图。每张图占33.3%。
-   为了有淡入淡出的效果，需要在切换点设置透明度变化。
-*/
 @keyframes backgroundSlideshow {
-    0% {
-        background-image: url('bg1.jpg');
-        opacity: 1;
-    }
-    5% {
-        background-image: url('bg1.jpg');
-        opacity: 1;
-    }
-    10% {
-        opacity: 1; /* 第一张淡出 */
-    }
-】
+    0% { background-image: url('bg1.jpg'); opacity: 1; }
+    5% { background-image: url('bg1.jpg'); opacity: 1; }
+    10% { opacity: 1; }
+    
+    13.3% { background-image: url('bg2.jpg'); opacity: 1; }
+    16.6% { background-image: url('bg2.jpg'); opacity: 1; }
+    20% { opacity: 1; }
 
-    13.3% {
-        background-image: url('bg2.jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    16.6% {
-        background-image: url('bg2.jpg');
-        opacity: 1;
-    }
-    20% {
-        opacity: 1; /* 第二张淡出 */
-    }
+    23.3% { background-image: url('bg3.jpg'); opacity: 1; }
+    26.6% { background-image: url('bg3.jpg'); opacity: 1; }
+    30% { opacity: 1; }
 
+    33.3% { background-image: url('bg4.jpg'); opacity: 1; }
+    36.6% { background-image: url('bg4.jpg'); opacity: 1; }
+    40% { opacity: 1; }
 
-    23.3% {
-        background-image: url('bg3.jpg'); /* 第三张载入 */
-        opacity: 1; /* 第三张淡入完成 */
-    }
-    26.6% {
-        background-image: url('bg3.jpg');
-        opacity: 1;
-    }
-    30% {
-        opacity: 1; /* 第三张淡出，准备循环回第一张 */
-    }
+    43.3% { background-image: url('bg5.jpg'); opacity: 1; }
+    46.6% { background-image: url('bg5.jpg'); opacity: 1; }
+    50% { opacity: 1; }
 
+    53.3% { background-image: url('bg6.jpg'); opacity: 1; }
+    56.6% { background-image: url('bg6.jpg'); opacity: 1; }
+    60% { opacity: 1; }
 
-    33.3% {
-        background-image: url('bg4.jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    36.6% {
-        background-image: url('bg4.jpg');
-        opacity: 1;
-    }
-    40% {
-        opacity: 1; /* 第二张淡出 */
-    }
+    63.3% { background-image: url('bg7.jpg'); opacity: 1; }
+    66.6% { background-image: url('bg7.jpg'); opacity: 1; }
+    70% { opacity: 1; }
 
+    73.3% { background-image: url('bg8.jpg'); opacity: 1; }
+    76.6% { background-image: url('bg8.jpg'); opacity: 1; }
+    80% { opacity: 1; }
 
-    43.3% {
-        background-image: url('bg5.jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    46.6% {
-        background-image: url('bg5.jpg');
-        opacity: 1;
-    }
-    50% {
-        opacity: 1; /* 第二张淡出 */
-    }
+    83.3% { background-image: url('bg9.jpg'); opacity: 1; }
+    86.6% { background-image: url('bg9.jpg'); opacity: 1; }
+    90% { opacity: 1; }
 
-
-    53.3% {
-        background-image: url('bg6.jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    56.6% {
-        background-image: url('bg6.jpg');
-        opacity: 1;
-    }
-    60% {
-        opacity: 1; /* 第二张淡出 */
-    }
-
-
-    63.3% {
-        background-image: url('bg7.jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    66.6% {
-        background-image: url('bg7.jpg');
-        opacity: 1;
-    }
-    70% {
-        opacity: 1; /* 第二张淡出 */
-    }
-
-
-    73.3% {
-        background-image: url('bg8jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    76.6% {
-        background-image: url('bg8jpg');
-        opacity: 1;
-    }
-    80% {
-        opacity: 1; /* 第二张淡出 */
-    }
-
-
-    83.3% {
-        background-image: url('bg9jpg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    86.6% {
-        background-image: url('bg9jpg');
-        opacity: 1;
-    }
-    90% {
-        opacity: 1; /* 第二张淡出 */
-    }
-
-
-    93.3% {
-        background-image: url('bg10pg'); /* 第二张载入 */
-        opacity: 1; /* 第二张淡入完成 */
-    }
-    96.6% {
-        background-image: url('bg10pg');
-        opacity: 1;
-    }
-    100% {
-        opacity: 1 /* 第二张淡出 */
-    }
+    93.3% { background-image: url('bg10.jpg'); opacity: 1; }
+    96.6% { background-image: url('bg10.jpg'); opacity: 1; }
+    100% { opacity: 1; }
 }
 
 /* 确保首屏内容在蒙版和图片之上 */
@@ -208,27 +115,18 @@ body {
 
 /* 粒子背景层 */
 #particle-container {
-    position: fixed; /* 固定在屏幕背景 */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* 保证在所有文字下方 */
-    background: #000;
+    z-index: 2; 
+    background: transparent; 
+    pointer-events: none; 
 }
-
-/* 主视觉区居中 */
-.hero-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
 .main-title {
-    font-size: 3rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 4rem; 
     font-weight: 300;
     letter-spacing: 5px;
     margin-bottom: 20px;
@@ -237,6 +135,7 @@ body {
 }
 
 .sub-title {
+    font-family: 'Noto Serif SC', serif;
     font-size: 1.1rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -245,6 +144,7 @@ body {
 }
 
 button {
+    font-family: 'Noto Serif SC', serif;
     padding: 12px 35px;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -271,6 +171,7 @@ button:hover {
 }
 
 .section-title {
+    font-family: 'Noto Serif SC', serif;
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 4px;
@@ -282,8 +183,38 @@ button:hover {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 15px;
     padding: 0 20px;
+}
+
+/* 照片卡片容器 */
+.photo-card {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    border-radius: 30px; 
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px); 
+}
+
+/* 鼠标悬停时的动感效果 */
+.photo-card:hover {
+    transform: translateY(-20px) rotate(3deg); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 77, 109, 0.5); 
+}
+
+/* 卡片内的图片样式 */
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 30px;
+    display: block;
 }
 
 footer {
@@ -294,44 +225,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- 🌟 真实照片墙的专属样式 🌟 --- */
-
-/* 调整照片墙的网格，让它更紧凑 */
-#gallery .gallery-grid {
-    gap: 15px; /* 缩小照片之间的间距 */
-}
-
-/* 照片卡片容器 */
-.photo-card {
-    background: rgba(255, 255, 255, 0.03); /* 极度透明 */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* 极细边框 */
-    border-radius: 30px; /* 偏向直角的微圆角，比大圆角更高级 */
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease;
-    backdrop-filter: blur(5px); /* 毛玻璃效果 */
-}
-
-/* 鼠标悬停时的动感效果 */
-.photo-card:hover {
-    transform: translateY(-20px) rotate(370deg); /* 向上浮动并轻微旋转 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 77, 109, 2); /* 悬浮时透出一丝粉光 */
-}
-
-/* 卡片内的图片样式 */
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 🌟 关键：图片自动裁剪填充，防止拉伸变形 */
-    border-radius: 30px;
-    display: block;
-}
-
-/* 音乐播放器容器 - 固定在右下角 */
+/* 音乐播放器容器 */
 .music-player {
     position: fixed;
     bottom: 30px;
@@ -345,7 +239,6 @@ footer {
     pointer-events: none;
 }
 
-/* 播放状态下的显示 */
 .music-player.playing {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -366,7 +259,7 @@ footer {
         inset 0 0 20px rgba(0,0,0,0.5);
     position: relative;
     animation: rotate 3s linear infinite;
-    animation-play-state: paused; /* 初始暂停 */
+    animation-play-state: paused; 
 }
 
 /* 唱片中心标签 */
@@ -388,7 +281,6 @@ footer {
     border: 4px solid #1a1a1a;
 }
 
-/* 播放时旋转 */
 .music-player.playing .cd-disc {
     animation-play-state: running;
     box-shadow: 
@@ -401,7 +293,7 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-/* 音符动画容器 - 初始完全隐藏 */
+/* 音符动画容器 */
 .music-notes {
     position: fixed;
     bottom: 70px;
@@ -410,48 +302,33 @@ footer {
     height: 100px;
     pointer-events: none;
     z-index: 99;
-    opacity: 0;  /* 初始透明 */
+    opacity: 0;  
     transition: opacity 0.5s ease;
 }
 
-/* 播放时显示音符容器 */
 .music-notes.playing {
     opacity: 1;
 }
 
-/* 单个音符 - 初始暂停，透明 */
 .note {
     position: absolute;
     font-size: 24px;
     color: #ff6b81;
-    opacity: 0;  /* 初始不可见 */
+    opacity: 0;  
     animation: float-up 3s ease-out infinite;
-    animation-play-state: paused; /* 初始暂停 */
+    animation-play-state: paused; 
     text-shadow: 0 0 10px rgba(255, 107, 129, 0.8);
 }
 
-/* 播放状态下的音符 */
 .music-notes.playing .note {
-    animation-play-state: running; /* 开始动画 */
+    animation-play-state: running; 
 }
 
-/* 音符飘动动画 */
 @keyframes float-up {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(0) scale(0.5) rotate(0deg);
-    }
-    20% {
-        opacity: 1;
-        transform: translateY(-30px) translateX(10px) scale(1) rotate(10deg);
-    }
-    80% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-100px) translateX(-20px) scale(0.8) rotate(-10deg);
-    }
+    0% { opacity: 0; transform: translateY(0) translateX(0) scale(0.5) rotate(0deg); }
+    20% { opacity: 1; transform: translateY(-30px) translateX(10px) scale(1) rotate(10deg); }
+    80% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-100px) translateX(-20px) scale(0.8) rotate(-10deg); }
 }
 
 /* 全屏闪光效果 */
@@ -484,10 +361,120 @@ footer {
 }
 
 @keyframes text-glow {
-    from {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 107, 129, 0.3);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 107, 129, 0.6), 0 0 40px rgba(255, 107, 129, 0.4);
-    }
+    from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 107, 129, 0.3); }
+    to { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 107, 129, 0.6), 0 0 40px rgba(255, 107, 129, 0.4); }
+}
+
+/* --- 🌟 信封开场动画样式 🌟 --- */
+#envelope-container {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: #050505; 
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1) 1s; 
+}
+
+#envelope-container.slide-up {
+    transform: translateY(-100vh); 
+}
+
+.envelope-wrapper {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    background-color: #d9534f;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 130px solid #c9302c; 
+    transform-origin: top center;
+    transition: transform 0.6s ease-in-out;
+    z-index: 3;
+}
+
+.envelope-wrapper.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1; 
+}
+
+.envelope-body {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0; height: 0;
+    border-left: 160px solid #e06a66;
+    border-right: 160px solid #e06a66;
+    border-bottom: 110px solid #d9534f;
+    border-top: 110px solid transparent;
+    z-index: 2;
+    border-radius: 0 0 10px 10px;
+}
+
+.seal-btn {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #fbc531, #e1b12c);
+    border: 2px solid #c8d6e5;
+    border-radius: 50%;
+    z-index: 4;
+    cursor: pointer;
+    color: #2f3640;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.seal-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    background: #fff;
+}
+
+.envelope-wrapper.open .seal-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.letter-peek {
+    position: absolute;
+    top: 5px; left: 15px; right: 15px; bottom: 15px;
+    background: #fff;
+    z-index: 1;
+    border-radius: 5px;
+    transition: transform 0.6s ease-in-out 0.4s;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.letter-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #c9302c;
+    margin: 0;
+}
+
+.envelope-wrapper.open .letter-peek {
+    transform: translateY(-60px);
 }
