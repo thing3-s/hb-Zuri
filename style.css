@@ -478,3 +478,68 @@ footer {
 .envelope-wrapper.open .letter-peek {
     transform: translateY(-60px);
 }
+
+/* --- Sticky Note Modal --- */
+.sticky-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+}
+
+.sticky-note {
+    width: 380px;
+    background: linear-gradient(135deg, #fff9c4, #fff59d);
+    padding: 40px 35px 35px;
+    border-radius: 4px;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 193, 7, 0.4);
+    transform: rotate(-3deg);
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    color: #3d2b1f;
+    line-height: 1.6;
+    font-size: 1.35rem;
+    text-align: center;
+    border: 2px solid #ffe082;
+}
+
+.sticky-note::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 60px;
+    height: 20px;
+    background: #ffeb3b;
+    transform: translateX(-50%) rotate(-2deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.close-note {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #d32f2f;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.note-content {
+    margin-top: 10px;
+}
+
+/* Hover effect on photos */
+.photo-card {
+    cursor: pointer;
+}

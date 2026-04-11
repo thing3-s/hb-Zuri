@@ -161,4 +161,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     setTimeout(initParticles, 100);
+
+    // --- NEW: Sticky Note System ---
+    const modal = document.getElementById('sticky-modal');
+    const noteContent = document.getElementById('note-content');
+    const closeBtn = document.getElementById('close-note');
+
+    // Personalized messages (edit freely)
+    const photoNotes = {
+        1: "我们的第一次KTV之夜… 你唱《遇见》的时候，我的心就彻底沦陷了 💕",
+        2: "第一次牵手散步的夜晚，路灯下的你比星星还亮。",
+        3: "那次你为我做的爱心便当，我到现在还记得味道。",
+        4: "一起看日出的清晨，你靠在我肩上的那一刻。",
+        5: "我们第一次旅行，在海边留下的脚印。",
+        6: "你笑起来弯弯的眼睛，是我最爱的风景。",
+        7: "2025年冬天，我们一起堆的雪人还在照片里笑着。",
+        8: "每一次晚安吻，都让我更加确定：你就是我的未来。",
+        9: "亲爱的Zuri，今天是你的生日。我想用一生来守护你。"
+    };
+
+    // Add click listeners to all photo cards
+    document.querySelectorAll('.photo-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const photoId = card.getAttribute('data-photo');
+            if (photoNotes[photoId]) {
+                noteContent.innerHTML = `<p>${photoNotes[photoId]}</p>`;
+                modal.style.display = 'flex';
+            }
+        });
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
 });
